@@ -70,7 +70,11 @@ $('document').ready(function() {
 	console.log("MINUTES UNTIL NEXT TRAIN: " + minsAway);
 	//NEXT TRAIN
 	var nextTrain = moment().add(minsAway, 'minutes');
-	console.log("ARRIVAL TIME: " + moment(nextTrain).format('HH:mm A'));
+    console.log("ARRIVAL TIME: " + moment(nextTrain).format('HH:mm A'));
+    
+    $('#trainData').append(
+            `<tr><td>${ childSnapshot.val().name }</td><td>${ childSnapshot.val().destination }</td><td>${ childSnapshot.val().frequency }</td><td>${ moment(nextTrain).format('HH:mm A') }</td><td>${ minsAway }</td>`
+        )
 
   });
 
