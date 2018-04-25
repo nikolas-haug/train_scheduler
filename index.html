@@ -14,6 +14,8 @@
         crossorigin="anonymous"></script>
         <!-- moment js -->
         <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+        <!-- fontawesome -->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
         <!-- bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
           crossorigin="anonymous">
@@ -27,14 +29,45 @@
 
     <div class="container">
         
-        <div class="jumbotron">
-            <h1 class="display-4">Train Scheduler</h1>
-            <p class="lead">check your train times here!</p>
+        <div class="jumbotron px-4 pt-3 pb-4 mt-2">
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <h2 class="display-5">Train Schedule Maker</h2>
+                    <!-- <p class="lead">check your train times here!</p> -->
+                    <img class="img-fluid" src="assets/images/train-platform-aman-bhargava.jpeg" alt="">
+                </div>
+                <div class="col-md-6 px-2 pt-3">
+                    <h5>add a new train to the list:</h5>
+                    <form>
+                        <div class="form-group mb-0">
+                            <label for="train-name">Train Name</label>
+                            <input type="text" class="form-control" id="train-name">
+                        </div>
+                        <div class="form-group mb-0">
+                            <label for="train-destination">Destination</label>
+                            <input type="text" class="form-control" id="train-destination">
+                        </div>
+                        <div class="form-group mb-0">
+                            <label for="train-first-time">First Train Time (HH: mm)</label>
+                            <input type="time" class="form-control" id="train-first-time">
+                        </div>
+                        <div class="form-group mb-2">
+                            <label for="train-frequency">Frequency (mins)</label>
+                            <input type="text" class="form-control" id="train-frequency">
+                        </div>
+                        <button id="newTrain" type="submit" class="btn btn-sm btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+            
+            
         </div>
 
         <div class="card">
-            <div class="card-header">
-                Current Train Schedule
+            <div class="card-header p-2 pl-3">
+                <h4 class="mb-0">Train Schedule  <button id="refresh-schedule"><i class="fas fa-sync-alt"></i></button></h4>
+                    
+                    <!-- <span class="ml-auto"><button id="refresh-schedule">Refresh</button></span> -->
             </div>
             <div class="card-body p-0">
                 <table class="table">
@@ -54,7 +87,7 @@
             </div>
         </div>
 
-        <div class="card mt-3">
+        <!-- <div class="card mt-3">
             <div class="card-header">
                 Add new train
             </div>
@@ -79,7 +112,7 @@
                     <button id="newTrain" type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
-        </div>
+        </div> -->
 
     </div>
     
