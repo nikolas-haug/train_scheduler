@@ -64,7 +64,7 @@ $('document').ready(function() {
     
     //append the data to the DOM from the database
     $('#trainData').append(
-            `<tr><td>${ childSnapshot.val().name }</td><td>${ childSnapshot.val().destination }</td><td>${ childSnapshot.val().frequency }</td><td>${ moment(nextTrain).format('HH:mm A') }</td><td>${ minsAway }</td>`
+            `<tr class="train-item"><td>${ childSnapshot.val().name }</td><td>${ childSnapshot.val().destination }</td><td>${ childSnapshot.val().frequency }</td><td>${ moment(nextTrain).format('HH:mm A') }</td><td>${ minsAway }</td>`
         )
 
   });
