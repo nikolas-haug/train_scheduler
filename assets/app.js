@@ -67,7 +67,11 @@ $('document').ready(function() {
             `<tr class="train-item"><td>${ childSnapshot.val().name }</td><td>${ childSnapshot.val().destination }</td><td>${ childSnapshot.val().frequency }</td><td>${ moment(nextTrain).format('HH:mm A') }</td><td>${ minsAway }</td>`
         )
 
+    $('#current-time').text(moment(currentTime).format("HH:mm A"));
+
   });
+
+    
 
   $('#refresh-schedule').on('click', function() {
     location.reload();

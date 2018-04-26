@@ -12,6 +12,8 @@
         src="http://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+        <!-- google fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Crimson+Text|PT+Sans:700" rel="stylesheet">
         <!-- moment js -->
         <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
         <!-- fontawesome -->
@@ -37,7 +39,7 @@
                     <img class="img-fluid" src="assets/images/train-platform-aman-bhargava.jpeg" alt="a deserted train station">
                 </div>
                 <div class="col-md-6 px-3 pt-3">
-                    <h5>add a new train to the list:</h5>
+                    <h4>add a new train to the list:</h4>
                     <form>
                         <div class="form-group mb-0">
                             <label for="train-name">Train Name</label>
@@ -55,7 +57,7 @@
                             <label for="train-frequency">Frequency (mins)</label>
                             <input type="text" class="form-control" id="train-frequency">
                         </div>
-                        <button id="newTrain" type="submit" class="btn btn-sm btn-primary">Submit</button>
+                        <button id="newTrain" type="submit" class="btn btn-sm">Submit</button>
                     </form>
                 </div>
             </div>
@@ -65,7 +67,14 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header p-2 pl-3">
-                        <h4 class="mb-0">Train Schedule  <button id="refresh-schedule"><i class="fas fa-sync-alt"></i></button></h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4 class="mb-0">Train Schedule  <button id="refresh-schedule"><i class="fas fa-sync-alt"></i></button></h4>
+                            </div>
+                            <div class="col-md-6 mr-auto">
+                                <h4 class="time">current time: <span id="current-time"></span></h4>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body p-0">
                         <table class="table">

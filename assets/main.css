@@ -6,12 +6,50 @@ body {
 
 .jumbotron, .card-header {
     background-color: #E4DBD1;
+    font-family: 'Crimson Text', serif;
 }
 
-tr td {
+.form-group, input {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+
+.btn {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    background-color: #00BC6A;
+}
+
+.btn:hover {
+    background-color: #fff;
+    transition: all, 0.3s;
+}
+
+h2 {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* tr td {
     background-color: rgba(250, 245, 247, 1);
+} */
+
+.table {
+    font-family: 'PT Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+th {
+    font-size: 22px;
+    letter-spacing: 0.8px;
+}
+
+tbody {
+    font-size: 16px;
 }
 
 .train-item:hover {
-    background-color: green;
+    background-color: #00BC6A;
+    transition: all, 0.3s;
 }
