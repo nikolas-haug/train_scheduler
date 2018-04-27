@@ -14,10 +14,11 @@ $('document').ready(function() {
 
   var database = firebase.database();
 
+  //function to append the data from the database to the DOM
   function append(childSnapshot) {
     //set the current time in the heading
     var currentTime = moment();
-    console.log("the current time is: " + moment(currentTime).format("HH:mm"));
+    // console.log("the current time is: " + moment(currentTime).format("HH:mm"));
 
     var name = childSnapshot.val().name;
     var destination = childSnapshot.val().destination;
@@ -47,6 +48,7 @@ $('document').ready(function() {
 
    }
 
+   //function to update the DOM from the database every 60 seconds
    function syncData() {
        //clear table
         $('#trainData').empty();
@@ -61,12 +63,13 @@ $('document').ready(function() {
                 database.ref(key).once('value').then(append);
             });
        });
-       
    }
 
+   //set an interval of 60 seconds and update the DOM - train times - every instance
    setInterval(syncData, 60000);
 //    setTimeout(syncData, 1000);
 
+   //event listener to add new train and times to the DOM on button submit
   $('#newTrain').on('click', function(event) {
       event.preventDefault();
         
@@ -91,10 +94,11 @@ $('document').ready(function() {
 
   });
 
+//listener for the database - call the append function to get data from snapshots
 database.ref().on('child_added', append, function(errorObject) {
     console.log("Errors handled: " + errorObject.code);
   });
-  //refresh the train times schedule - CHECK THAT ONLY THAT REFRESHES, NOT THE ENTIRE PAGE
+  //refresh the train times schedule - TO DO - CHECK THAT ONLY THAT REFRESHES, NOT THE ENTIRE PAGE
   $('#refresh-schedule').on('click', function() {
     location.reload();
   });
